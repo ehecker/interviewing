@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = user.find(params[:id]).includes(:posts {:comments })
+    
+    
   end
 
   # GET /users/new
